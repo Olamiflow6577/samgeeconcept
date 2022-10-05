@@ -1,0 +1,111 @@
+.about__container{
+    padding: 0;
+    display: grid;
+    grid-template-columns: 40% 50%;
+    gap: 10%; 
+}
+
+.about__me{
+    width: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+    display: grid;
+    place-items: center;
+}
+
+.about__me-image{
+    border-radius: 2rem;
+    overflow: hidden;
+    transform:rotate(10deg);
+    transition: var(--transition);
+}
+.about__me-image:hover{
+    transform: rotate(0deg);
+}
+.about__cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.about__card{
+    background: rgb(107, 11, 11);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    opacity: 80%;
+    transition: var(--transition);
+    
+}
+.about__card:hover{
+    background:  rgba(0, 0, 0, 0.6);
+    border-color: aqua;
+    backdrop-filter: blur(40%);
+    opacity: 100%;
+    cursor: default;
+}
+.about__icon{
+    color: rgb(245, 140, 140);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.about__card h5{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+.about__card small{
+    font-size: 0.7rem;
+    color: var(--color-light);
+}
+.about__content p{
+    margin: 2rem 0 3rem;
+    color: var(--color-light);
+}
+
+/* -----Media queries(medium devices)------*/
+
+@media screen and (max-width: 1024px) {
+    .about__container{
+        grid-template-columns: 2fr;
+        gap: 0;
+        overflow: hidden;
+    }
+    .about__me{
+        width: 30%;
+        margin: 0 auto 1rem;
+    }
+    .about__content p{
+        margin: 1rem 0 1.5rem;
+    }
+    .about__card{
+        border: 0;
+        padding: 0;;
+        
+    }
+    .btn.btn-primary{
+        display: none;
+    }
+    
+}
+
+/* -----Media queries(Small devices)------*/
+
+@media screen and (max-width: 600px) {
+    .about__container{
+        grid-template-columns: 1fr;
+    }
+    .about__card{
+        display: grid;
+        grid-template-rows: 3fr;
+    }
+    .about__content{
+        text-align: center;
+    }
+    .about__content p{
+        font-size: 1rem;
+    }
+    .btn.btn-primary{
+        display:inherit;
+    }
+}
